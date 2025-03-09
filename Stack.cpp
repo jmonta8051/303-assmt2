@@ -33,7 +33,9 @@ bool Stack::empty()
 }
 
 float Stack::average()
-{
+{  
+    if (this->empty()) { return 0; }
+
     //Adds values, divides by size
     int accumulation = 0;
     for (auto i : this->data) { accumulation += i; }
@@ -42,9 +44,10 @@ float Stack::average()
 
 void Stack::print()
 {
-    std::cout << "-" << this->numItems << "-\n";
+    std::cout << "Size - " << this->numItems << "\n\n";
     for (auto i : this->data)
     {
-        std::cout << i << "\n";
+        std::cout << i << "  ";
     }
+    std::cout << "\n";
 }

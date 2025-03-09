@@ -59,6 +59,18 @@ Node* LinkedList::pop_back()
     if (this->head == nullptr)
         return nullptr;
 
+    //Handles list of one element
+    if (this->tail == this->head)
+    {
+        Node* pop = this->tail;
+
+        this->head = nullptr;
+        this->tail = nullptr;
+
+        numItems--;
+        return pop;
+    }
+
     //Saves for return
     Node* pop = this->tail;
 
@@ -145,10 +157,14 @@ int  LinkedList::find(int data)
 
 void LinkedList::print_list()
 {
+    std::cout << "Size - " << this->numItems << "\n\n";
+
     Node* iterator = this->head;
     while (iterator != nullptr)
     {
-        std::cout << iterator->data << "\n";
+        std::cout << iterator->data << "  ";
         iterator = iterator->next;
     }
+    
+    std::cout << "\n";
 }
