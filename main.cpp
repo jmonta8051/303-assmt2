@@ -1,3 +1,7 @@
+//NAME: Jackson Montaigne
+//CLASS: CS303-0002
+//DESC: A simple stack and linked list user interface.
+
 #include "main.h"
 #include "UserInterface.cpp"
 
